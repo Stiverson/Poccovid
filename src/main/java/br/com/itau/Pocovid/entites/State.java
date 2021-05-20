@@ -1,8 +1,12 @@
 package br.com.itau.Pocovid.entites;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
-
+@Getter
+@Setter
 @Entity
 @Table(name = "State")
 public class State {
@@ -26,70 +30,6 @@ public class State {
     private Integer refuses;
     @Column
     private String datetime;
-
-    public Integer getUid() {
-        return uid;
-    }
-
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
-
-    public String getUf() {
-        return uf;
-    }
-
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public Integer getCases() {
-        return cases;
-    }
-
-    public void setCases(Integer cases) {
-        this.cases = cases;
-    }
-
-    public Integer getDeaths() {
-        return deaths;
-    }
-
-    public void setDeaths(Integer deaths) {
-        this.deaths = deaths;
-    }
-
-    public Integer getSuspects() {
-        return suspects;
-    }
-
-    public void setSuspects(Integer suspects) {
-        this.suspects = suspects;
-    }
-
-    public Integer getRefuses() {
-        return refuses;
-    }
-
-    public void setRefuses(Integer refuses) {
-        this.refuses = refuses;
-    }
-
-    public String getDatetime() {
-        return datetime;
-    }
-
-    public void setDatetime(String datetime) {
-        this.datetime = datetime;
-    }
 
     @Override
     public int hashCode() {

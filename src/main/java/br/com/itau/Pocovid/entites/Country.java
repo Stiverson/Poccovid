@@ -1,9 +1,13 @@
 package br.com.itau.Pocovid.entites;
 
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
-
+@Getter
+@Setter
 @Entity
 public class Country {
 
@@ -11,7 +15,7 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String coutry;
+    private String country;
     @Column
     private Integer cases;
     @Column
@@ -22,54 +26,6 @@ public class Country {
     private Integer recovered;
     @Column
     private String updated_at;
-
-    public String getCoutry() {
-        return coutry;
-    }
-
-    public void setCoutry(String coutry) {
-        this.coutry = coutry;
-    }
-
-    public Integer getCases() {
-        return cases;
-    }
-
-    public void setCases(Integer cases) {
-        this.cases = cases;
-    }
-
-    public Integer getConfirmed() {
-        return confirmed;
-    }
-
-    public void setConfirmed(Integer confirmed) {
-        this.confirmed = confirmed;
-    }
-
-    public Integer getDeaths() {
-        return deaths;
-    }
-
-    public void setDeaths(Integer deaths) {
-        this.deaths = deaths;
-    }
-
-    public Integer getRecovered() {
-        return recovered;
-    }
-
-    public void setRecovered(Integer recovered) {
-        this.recovered = recovered;
-    }
-
-    public String getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(String updated_at) {
-        this.updated_at = updated_at;
-    }
 
     @Override
     public int hashCode() {
