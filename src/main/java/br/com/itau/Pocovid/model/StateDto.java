@@ -21,6 +21,9 @@ public class StateDto {
     private Integer refuses;
     private String datetime;
 
+    public  StateDto(){
+
+    }
     public StateDto(State state) {
         this.uf = state.getUf();
         this.state = state.getState();
