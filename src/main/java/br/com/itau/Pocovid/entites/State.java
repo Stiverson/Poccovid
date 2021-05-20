@@ -16,7 +16,7 @@ public class State {
     private Long id;
     @Column
     private Integer uid;
-    @Column
+    @Column(name = "uf", nullable = false, updatable = false)
     private String uf;
     @Column
     private String state;

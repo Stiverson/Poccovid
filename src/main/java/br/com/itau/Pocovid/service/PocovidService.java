@@ -19,10 +19,16 @@ public class PocovidService {
     private CountryRepository countryRepository;
 
     public List<StateDto> getStateList() {
+
        return StateDto.converter(statesRepository.findAll());
     }
 
     public List<CountryDto> getCountryList() {
         return CountryDto.converter(countryRepository.findAll());
+    }
+
+
+    public StateDto getStateByUf(String uf) {
+        return statesRepository.findStateByUf(uf.toUpperCase().trim());
     }
 }
