@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface StatesRepository extends JpaRepository<State, Long> {
 
-    public StateDto findStateByUf(String uf);
+    public StateDto findStateByUfAndDate(String uf);
 }

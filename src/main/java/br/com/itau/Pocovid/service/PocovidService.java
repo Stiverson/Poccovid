@@ -28,7 +28,7 @@ public class PocovidService {
     }
 
 
-    public StateDto getStateByUf(String uf) {
-        return statesRepository.findStateByUf(uf.toUpperCase().trim());
+    public StateDto getStateByUfAndDate(String data , String uf) {
+        return statesRepository.findStateByUfAndDate(uf.toUpperCase().trim());
     }
 }
