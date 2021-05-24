@@ -17,26 +17,18 @@ public class PocovidController {
     @Autowired
     PocovidService pocovidService;
 
-    /**
-     *
-     * @return retorna uma lista de estados com casos de covid
-     */
 
     @GetMapping
     public List<StateDto> getStateList() {
-
         return pocovidService.getStateList();
     }
 
     @GetMapping(value = "/states")
     public StateDto getStateByUfAndDate(@RequestBody RequestDto requestDto) throws Exception {
 
-        if(PocovidUtils.validarParametros(requestDto)){
-
-            return pocovidService.getStateByUfAndDate(requestDto.getData(),requestDto.getUf());
-
+        if (PocovidUtils.validarParametros(requestDto)) {
+            return pocovidService.getStateByUfAndDate(requestDto.getUf(), requestDto.getData());
         }
-
         return null;
     }
 }
