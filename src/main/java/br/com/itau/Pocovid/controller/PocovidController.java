@@ -50,10 +50,10 @@ public class PocovidController {
     @GetMapping(value = "/country")
     public ResponseEntity<BaseResponse> getCountryByCountry(@RequestBody RequestDto requestDto){
         if (PocovidUtils.validarParametros(requestDto)) {
-            final StateDto stateDto =
-                    new StateDto(countryService.getCountryByCountry(requestDto.getCountry()));
-            return ResponseEntity.ok(BaseResponse.ok(stateDto));
+            final CountryDto countryDto =
+                    new CountryDto(countryService.getCountryByCountry(requestDto.getCountry()));
+            return ResponseEntity.ok(BaseResponse.ok(countryDto));
         }
-        return ResponseEntity.ok(BaseResponse.ok(new StateDto()));
+        return ResponseEntity.ok(BaseResponse.ok(new CountryDto()));
     }
 }

@@ -20,6 +20,10 @@ public class CountryDto {
     private Integer recovered;
     private String updated_at;
 
+    public CountryDto(){
+
+    }
+
     public CountryDto(Country country) {
         this.country = country.getCountry();
         this.cases = country.getCases();
@@ -27,6 +31,15 @@ public class CountryDto {
         this.deaths = country.getDeaths();
         this.recovered = country.getRecovered();
         this.updated_at = getUpdated_at();
+    }
+
+    public CountryDto(CountryDto countryDto) {
+        this.country = countryDto.getCountry();
+        this.cases = countryDto.getCases();
+        this.confirmed = countryDto.getConfirmed();
+        this.deaths = countryDto.getDeaths();
+        this.recovered = countryDto.getRecovered();
+        this.updated_at = countryDto.getUpdated_at();
     }
 
     public static List<CountryDto> converter(List<Country> states) {

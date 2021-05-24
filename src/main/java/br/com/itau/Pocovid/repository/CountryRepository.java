@@ -1,11 +1,11 @@
 package br.com.itau.Pocovid.repository;
 import br.com.itau.Pocovid.entites.Country;
-import br.com.itau.Pocovid.model.StateDto;
+import br.com.itau.Pocovid.model.CountryDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 public interface CountryRepository extends JpaRepository<Country, Long> {
 
-    public StateDto findByCountry(String country);
+    public CountryDto findByCountry(String country);
 
 }

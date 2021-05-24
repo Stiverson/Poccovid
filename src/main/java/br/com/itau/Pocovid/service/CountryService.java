@@ -18,7 +18,7 @@ public class CountryService {
         return CountryDto.converter(countryRepository.findAll());
     }
 
-    public StateDto getCountryByCountry(String country){
+    public CountryDto getCountryByCountry(String country){
         return  countryRepository.findByCountry(country);
 
     }
