@@ -1,6 +1,7 @@
 package br.com.itau.Pocovid.controller;
 
 
+import br.com.itau.Pocovid.entites.Country;
 import br.com.itau.Pocovid.model.BaseResponse;
 import br.com.itau.Pocovid.model.CountryDto;
 import br.com.itau.Pocovid.model.RequestDto;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -26,8 +28,9 @@ public class PocovidController {
     CountryService countryService;
 
     @GetMapping(value = "/states")
-    public List<StateDto> getStateList() {
-        return stateService.getStateList();
+    public ResponseEntity<BaseResponse> getStateList() {
+        final List<StateDto> stateList = new ArrayList<>(stateService.getStateList());
+        return ResponseEntity.ok(BaseResponse.ok(stateList));
     }
 
     @GetMapping(value = "/state")
@@ -42,8 +45,9 @@ public class PocovidController {
     }
 
     @GetMapping(value = "/countries")
-    public List<CountryDto> getCountryList(){
-        return countryService.getCountryList();
+    public ResponseEntity<BaseResponse> getCountryList(){
+            final List<CountryDto> countryList = new ArrayList<>(countryService.getCountryList());
+            return ResponseEntity.ok(BaseResponse.ok(countryList));
     }
 
 
