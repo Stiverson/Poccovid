@@ -34,6 +34,16 @@ public class StateDto {
         this.datetime = state.getDatetime();
     }
 
+    public StateDto(StateDto state) {
+        this.uf = state.getUf();
+        this.state = state.getState();
+        this.cases = state.getCases();
+        this.deaths = state.getDeaths();
+        this.suspects = state.getSuspects();
+        this.refuses = state.getRefuses();
+        this.datetime = state.getDatetime();
+    }
+
     public static List<StateDto> converter(List<State> state) {
         return state.stream().map(StateDto::new).collect(Collectors.toList());
     }
