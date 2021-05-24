@@ -2,11 +2,11 @@ package br.com.itau.Pocovid.utils;
 
 
 import br.com.itau.Pocovid.model.RequestDto;
-
+import org.springframework.context.annotation.Configuration;
 
 public class PocovidUtils {
 
-    public boolean validarParametros(RequestDto requestDto) throws Exception {
+    public static boolean validarParametros(RequestDto requestDto) throws Exception {
 
         if (requestDto.getCountry() ==  null || requestDto.getCountry() == ""){
             throw  new Exception("E necessario  inserir o Pais");
