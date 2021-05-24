@@ -1,10 +1,8 @@
 package br.com.itau.Pocovid.model;
 
 import br.com.itau.Pocovid.entites.Country;
-import br.com.itau.Pocovid.entites.State;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.stream.Collectors;

@@ -1,12 +1,10 @@
 package br.com.itau.Pocovid.controller;
 
 
-import br.com.itau.Pocovid.entites.Country;
 import br.com.itau.Pocovid.model.BaseResponse;
 import br.com.itau.Pocovid.model.CountryDto;
 import br.com.itau.Pocovid.model.RequestDto;
 import br.com.itau.Pocovid.model.StateDto;
-import br.com.itau.Pocovid.repository.CountryRepository;
 import br.com.itau.Pocovid.service.CountryService;
 import br.com.itau.Pocovid.service.StateService;
 import br.com.itau.Pocovid.utils.PocovidUtils;
