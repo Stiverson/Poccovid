@@ -20,8 +20,8 @@ public class StateServiceImpl implements StateService {
        return StateDto.converter(statesRepository.findAll());
     }
 
-    public StateDto getStateByUfAndDate(String datetime , String uf) {
-        return statesRepository.findByUfAndDatetime(datetime, uf);
+    public StateDto getStateByUfAndDate(String uf, String datetime) {
+        return new StateDto(statesRepository.findByUfAndDatetime(uf, datetime));
     }
 
 }
