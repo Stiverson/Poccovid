@@ -8,5 +8,5 @@ import org.springframework.data.repository.query.Param;
 
 public interface StatesRepository extends JpaRepository<State, Long> {
 
-    public StateDto findByUfAndDatetime(String uf, String datetime);
+    public State findByUfAndDatetime(String uf, String datetime);
 }
