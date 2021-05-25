@@ -1,10 +1,17 @@
 package br.com.itau.Pocovid.service.impl;
 
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.junit.MockitoJUnitRunner;
 
+
+@RunWith(MockitoJUnitRunner.class)
 class StateServiceImplTest {
+
+    @InjectMocks
+    StateServiceImpl stateService;
 
     @Test
     void getStateList() {
@@ -12,5 +19,6 @@ class StateServiceImplTest {
 
     @Test
     void getStateByUfAndDate() {
+
     }
 }

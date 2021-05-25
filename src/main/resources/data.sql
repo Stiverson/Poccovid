@@ -4,3 +4,5 @@ INSERT INTO STATE(uid, state, uf, cases, deaths, suspects, refuses, datetime) VA
 
 
 INSERT INTO COUNTRY (country, cases, confirmed, deaths, recovered, updated_at) VALUES('Canada', 1299, 1328, 19, 10, '2020-03-21T23:43:02.000Z');
+INSERT INTO COUNTRY (country, cases, confirmed, deaths, recovered, updated_at) VALUES('Brazil', 1299, 1328, 19, 10, '2020-01-21T26:43:02.000Z');
+INSERT INTO COUNTRY (country, cases, confirmed, deaths, recovered, updated_at) VALUES('England', 1299, 1328, 19, 10, '2020-08-15T23:43:02.000Z');

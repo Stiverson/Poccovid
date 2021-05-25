@@ -9,6 +9,7 @@ import br.com.itau.Pocovid.service.CountryService;
 import br.com.itau.Pocovid.service.StateService;
 import br.com.itau.Pocovid.utils.PocovidUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,14 +33,16 @@ public class PocovidController {
     }
 
     @GetMapping(value = "/state")
-    public ResponseEntity<BaseResponse> getStateByUfAndDate(@RequestBody RequestDto requestDto){
+    public ResponseEntity getStateByUfAndDate(@RequestBody RequestDto requestDto){
 
         if (PocovidUtils.validarParametros(requestDto)) {
             final StateDto stateDto =
                     new StateDto(stateService.getStateByUfAndDate(requestDto.getUf(), requestDto.getData()));
             return ResponseEntity.ok(BaseResponse.ok(stateDto));
         }
-        return ResponseEntity.ok(BaseResponse.ok(new StateDto()));
+
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
     }
 
     @GetMapping(value = "/countries")
