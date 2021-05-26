@@ -6,7 +6,7 @@ import br.com.itau.Pocovid.model.RequestDto;
 
 public class PocovidUtils {
 
-    public static boolean validarParametros(RequestDto requestDto) throws UtilsException {
+    public static boolean validateParameters(RequestDto requestDto) throws UtilsException {
 
         if (requestDto.getCountry() ==  null || requestDto.getCountry() == ""){
             throw new UtilsException("E necessario  inserir o Pais");

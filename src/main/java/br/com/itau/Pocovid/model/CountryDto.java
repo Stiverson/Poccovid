@@ -31,15 +31,6 @@ public class CountryDto {
         this.updated_at = getUpdated_at();
     }
 
-    public CountryDto(CountryDto countryDto) {
-        this.country = countryDto.getCountry();
-        this.cases = countryDto.getCases();
-        this.confirmed = countryDto.getConfirmed();
-        this.deaths = countryDto.getDeaths();
-        this.recovered = countryDto.getRecovered();
-        this.updated_at = countryDto.getUpdated_at();
-    }
-
     public static List<CountryDto> converter(List<Country> states) {
         return states.stream().map(CountryDto::new).collect(Collectors.toList());
     }

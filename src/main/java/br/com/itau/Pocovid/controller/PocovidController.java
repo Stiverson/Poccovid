@@ -33,11 +33,11 @@ public class PocovidController {
     }
 
     @GetMapping(value = "/state")
-    public ResponseEntity getStateByUfAndDate(@RequestBody RequestDto requestDto){
+    public ResponseEntity<BaseResponse> getStateByUfAndDate(@RequestBody RequestDto requestDto) {
 
-        if (PocovidUtils.validarParametros(requestDto)) {
+        if (PocovidUtils.validateParameters(requestDto)) {
             final StateDto stateDto =
-                    new StateDto(stateService.getStateByUfAndDate(requestDto.getUf(), requestDto.getData()));
+                        stateService.getStateByUfAndDate(requestDto.getUf(), requestDto.getData());
             return ResponseEntity.ok(BaseResponse.ok(stateDto));
         }
 
@@ -54,9 +54,9 @@ public class PocovidController {
 
     @GetMapping(value = "/country")
     public ResponseEntity<BaseResponse> getCountryByCountry(@RequestBody RequestDto requestDto){
-        if (PocovidUtils.validarParametros(requestDto)) {
+        if (PocovidUtils.validateParameters(requestDto)) {
             final CountryDto countryDto =
-                    new CountryDto(countryService.getCountryByCountry(requestDto.getCountry()));
+                    countryService.getCountryByCountry(requestDto.getCountry());
             return ResponseEntity.ok(BaseResponse.ok(countryDto));
         }
         return ResponseEntity.ok(BaseResponse.ok(new CountryDto()));

@@ -19,7 +19,7 @@ public class CountryServiceImpl implements CountryService {
     }
 
     public CountryDto getCountryByCountry(String country){
-        return countryRepository.findByCountry(country);
+        return new CountryDto(countryRepository.findByCountry(country));
 
     }
 
