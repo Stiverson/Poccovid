@@ -33,15 +33,20 @@ public class PocovidController {
     }
 
     @GetMapping(value = "/state")
-    public ResponseEntity<BaseResponse> getStateByUfAndDate(@RequestBody RequestDto requestDto) {
+    public StateDto getStateByUfAndDate(@RequestParam String email,
+                                                            @RequestParam String country,
+                                                            @RequestParam String data,
+                                                            @RequestParam String uf) {
 
-        if (PocovidUtils.validateParameters(requestDto)) {
-            final StateDto stateDto =
-                        stateService.getStateByUfAndDate(requestDto.getUf(), requestDto.getData());
-            return ResponseEntity.ok(BaseResponse.ok(stateDto));
+        if (PocovidUtils.validateParameters(new RequestDto(email, country, data, uf))) {
+//            final StateDto stateDto =
+//                        stateService.getStateByUfAndDate(uf,data);
+//            return ResponseEntity.ok(BaseResponse.ok(stateDto));
+
+            return  stateService.getStateByUfAndDate(uf,data);
         }
 
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        return new StateDto();
 
     }
 
@@ -53,12 +58,15 @@ public class PocovidController {
 
 
     @GetMapping(value = "/country")
-    public ResponseEntity<BaseResponse> getCountryByCountry(@RequestBody RequestDto requestDto){
-        if (PocovidUtils.validateParameters(requestDto)) {
-            final CountryDto countryDto =
-                    countryService.getCountryByCountry(requestDto.getCountry());
-            return ResponseEntity.ok(BaseResponse.ok(countryDto));
+    public CountryDto getCountryByCountry(@RequestParam String email,
+                                                            @RequestParam String country,
+                                                            @RequestParam String data){
+        if (PocovidUtils.validateParameters(new RequestDto(email, country,data))) {
+//            final CountryDto countryDto =
+//                    countryService.getCountryByCountry(country);
+//            return ResponseEntity.ok(BaseResponse.ok(countryDto));
+            return countryService.getCountryByCountry(country);
         }
-        return ResponseEntity.ok(BaseResponse.ok(new CountryDto()));
+        return new CountryDto();
     }
 }
